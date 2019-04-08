@@ -83,4 +83,4 @@ latitude =
 -}
 longitude : Float -> Attribute msg
 longitude =
-    Encode.float >> property "latitude"
+    Encode.float >> property "longitude"
