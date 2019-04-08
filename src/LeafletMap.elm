@@ -26,14 +26,14 @@ import Json.Encode as Encode
 
     view
         [ LeafletMap.mapId "mapid"
-        , LeafletMap.latitude 51.505
-        , LeafletMap.longitude -0.09
-        , LeafletMap.scale 13
+        , LeafletMap.latitude "51.505"
+        , LeafletMap.longitude "-0.09"
+        , LeafletMap.scale "13"
         , LeafletMap.tileLayer "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         ]
         [ marker
-            [ LeafletMap.latitude 55
-            , LeafletMap.longitude "My great video"
+            [ LeafletMap.latitude "51.505"
+            , LeafletMap.longitude "-0.09"
             ]
             []
         ]
@@ -67,20 +67,20 @@ tileLayer =
 
 {-| tileLayer
 -}
-scale : Int -> Attribute msg
+scale : String -> Attribute msg
 scale =
-    Encode.int >> property "scale"
+    attribute "scale"
 
 
 {-| Latitude
 -}
-latitude : Float -> Attribute msg
+latitude : String -> Attribute msg
 latitude =
-    Encode.float >> property "latitude"
+    attribute "latitude"
 
 
 {-| Longitude
 -}
-longitude : Float -> Attribute msg
+longitude : String -> Attribute msg
 longitude =
-    Encode.float >> property "longitude"
+    attribute "longitude"
