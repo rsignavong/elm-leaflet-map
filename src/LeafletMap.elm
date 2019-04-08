@@ -1,7 +1,6 @@
 module LeafletMap exposing
     ( view
-    , latitude, longitude, mapId, scale, tileLayer
-    , marker
+    , latitude, longitude, mapId, marker, scale, tileLayer
     )
 
 {-| This library will load the Custom Html Element into the DOM.
@@ -14,7 +13,7 @@ module LeafletMap exposing
 
 # Attributes
 
-@docs latitude, longitude, mapId, scale, tileLayer
+@docs latitude, longitude, mapId, marker, scale, tileLayer
 
 -}
 
