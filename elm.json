@@ -3,7 +3,7 @@
     "name": "rsignavong/elm-leaflet-map",
     "summary": "An Elm wrapper for the Leaflet map",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "exposed-modules": [
         "LeafletMap"
     ],
