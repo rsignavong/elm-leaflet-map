@@ -1,7 +1,8 @@
 module LeafletMap exposing
     ( view
-    , latitude, longitude, mapId, marker, scale, tileLayer
+    , latitude, longitude, mapId, scale, tileLayer
     , className, defaultPopup, iconHeight, iconUrl, iconWidth, showDefaultMarker, showScale
+    , marker
     )
 
 {-| This library will load the Custom Html Element into the DOM.
@@ -14,7 +15,13 @@ module LeafletMap exposing
 
 # Attributes
 
-@docs latitude, longitude, mapId, marker, scale, tileLayer
+@docs latitude, longitude, mapId, scale, tileLayer
+@docs className, defaultPopup, iconHeight, iconUrl, iconWidth, showDefaultMarker, showScale
+
+
+# HTML Element
+
+@docs marker
 
 -}
 
@@ -112,14 +119,14 @@ tileLayer =
     attribute "tile-layer"
 
 
-{-| Latitude
+{-| latitude
 -}
 latitude : Float -> Attribute msg
 latitude =
     Encode.float >> Encode.encode 0 >> attribute "latitude"
 
 
-{-| Longitude
+{-| longitude
 -}
 longitude : Float -> Attribute msg
 longitude =
