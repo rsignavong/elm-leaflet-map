@@ -59,4 +59,10 @@ view model =
             ]
             [ text "... and THERE!"
             ]
+        , LeafletMap.circle
+            [ LeafletMap.radius 10.0
+            , LeafletMap.latitude 51.505
+            , LeafletMap.longitude -0.12
+            ]
+            []
         ]
