@@ -118,7 +118,7 @@ iconWidth =
 -}
 iconUrl : String -> Attribute msg
 iconUrl =
-    attribute "icon-width"
+    attribute "icon-url"
 
 
 {-| tileLayer
