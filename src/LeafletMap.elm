@@ -3,6 +3,7 @@ module LeafletMap exposing
     , latitude, longitude, mapId, scale, tileLayer
     , className, defaultPopup, iconHeight, iconUrl, iconWidth, showDefaultMarker, showScale
     , bubblingMouseEvents, color, dashArray, dashOffset, fill, fillColor, fillOpacity, fillRule, lineCap, lineJoin, opacity, radius, stroke, weight
+    , userLatitude, userLongitude, userIconUrl, userIconWidth, userIconHeight
     , marker, circle
     )
 
@@ -19,6 +20,7 @@ module LeafletMap exposing
 @docs latitude, longitude, mapId, scale, tileLayer
 @docs className, defaultPopup, iconHeight, iconUrl, iconWidth, showDefaultMarker, showScale
 @docs bubblingMouseEvents, color, dashArray, dashOffset, fill, fillColor, fillOpacity, fillRule, lineCap, lineJoin, opacity, radius, stroke, weight
+@docs userLatitude, userLongitude, userIconUrl, userIconWidth, userIconHeight
 
 
 # HTML Element
@@ -255,6 +257,41 @@ fillOpacity =
 fillRule : String -> Attribute msg
 fillRule =
     attribute "fill-rule"
+
+
+{-| userLatitude
+-}
+userLatitude : Float -> Attribute msg
+userLatitude =
+    Encode.float >> Encode.encode 0 >> attribute "user-latitude"
+
+
+{-| userLongitude
+-}
+userLongitude : Float -> Attribute msg
+userLongitude =
+    Encode.float >> Encode.encode 0 >> attribute "user-longitude"
+
+
+{-| userIconUrl
+-}
+userIconUrl : String -> Attribute msg
+userIconUrl =
+    attribute "user-icon-url"
+
+
+{-| userIconWidth
+-}
+userIconWidth : Int -> Attribute msg
+userIconWidth =
+    Encode.int >> Encode.encode 0 >> attribute "user-icon-width"
+
+
+{-| userIconHeight
+-}
+userIconHeight : Int -> Attribute msg
+userIconHeight =
+    Encode.int >> Encode.encode 0 >> attribute "user-icon-height"
 
 
 {-| bubblingMouseEvents
