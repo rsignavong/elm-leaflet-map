@@ -29,6 +29,7 @@ module LeafletMap exposing
 
 import Html exposing (Attribute, Html, node)
 import Html.Attributes exposing (attribute, property)
+import Html.Keyed as Keyed
 import Json.Encode as Encode
 
 
@@ -48,21 +49,23 @@ import Json.Encode as Encode
         , LeafletMap.showScale True
         , LeafletMap.tileLayer "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         ]
-        [ Leaflet.marker
-            [ LeafletMap.iconUrl "https://image.flaticon.com/icons/svg/194/194648.svg"
-            , LeafletMap.iconHeight 64
-            , LeafletMap.iconWidth 64
-            , LeafletMap.latitude 51.505
-            , LeafletMap.longitude -0.12
-            ]
-            [ text "... and THERE!"
-            ]
+        [ ( "marker"
+          , Leaflet.marker
+                [ LeafletMap.iconUrl "https://image.flaticon.com/icons/svg/194/194648.svg"
+                , LeafletMap.iconHeight 64
+                , LeafletMap.iconWidth 64
+                , LeafletMap.latitude 51.505
+                , LeafletMap.longitude -0.12
+                ]
+                [ text "... and THERE!"
+                ]
+          )
         ]
 
 -}
-view : List (Attribute msg) -> List (Html msg) -> Html msg
+view : List (Attribute msg) -> List ( String, Html msg ) -> Html msg
 view =
-    node "leaflet-map"
+    Keyed.node "leaflet-map"
 
 
 {-| Add leaflet-marker child node
